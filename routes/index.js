@@ -9,5 +9,10 @@ router.get('/plants', controllers.getAllPlants)
 router.get('/plants/:id', controllers.getPlantById)
 router.put('/plants/:id', controllers.updatePlant)
 router.delete('/plants/:id', controllers.deletePlant)
+router.post('/recipes', controllers.createRecipe)
+router.get('/recipes', controllers.getAllRecipes)
+router.get('/recipes/:id', controllers.getRecipeById)
+router.put('/recipes/:id', controllers.updateRecipe)
+router.delete('/recipes/:id', controllers.deleteRecipe)
 
 module.exports = router 
