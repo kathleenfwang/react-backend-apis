@@ -5,7 +5,8 @@ const Recipe = new Schema(
   {
     name: { type: String, required: true },
     description: { type: String, required: true },
-    image: { type: String, required: true } 
+    image: { type: String, required: true }, 
+    done: {type: Boolean, default: false}
   }, 
   {timestamps:true}
 )
