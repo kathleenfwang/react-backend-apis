@@ -8,7 +8,7 @@ const Recipe = new Schema(
     image: { type: String, required: true }, 
     done: {type: Boolean, default: false}
   }, 
-  {timestamps:true}
+  {timestamps:{ currentTime: () => Math.floor(Date.now() / 1000) }}
 )
 
 module.exports = mongoose.model('recipes',Recipe)
