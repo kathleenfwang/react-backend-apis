@@ -35,7 +35,6 @@ const createUser = async (req, res) => {
   const userLogin =  async (request, response) => {
     try {
         var user = await User.findOne({ username: request.body.username }).exec();
-        console.log(user)
         if(!user) {
             return response.status(400).send({ message: "The username does not exist" });
         }
@@ -44,7 +43,6 @@ const createUser = async (req, res) => {
         }
         return response.send({ message: "The username and password combination is correct!" });
     } catch (error) {
-      console.log(error)
         response.status(500).send(error);
     }
 };
