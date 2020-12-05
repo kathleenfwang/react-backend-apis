@@ -12,7 +12,13 @@ const {
     updatePlant,
     deletePlant,
 } = require ('./plantIndex')
-
+const {
+  createUser,
+  getAllUsers,
+  getUserById,
+  updateUser,
+  deleteUser
+} = require('./userIndex')
 module.exports = {
   createPlant,
   getAllPlants,
@@ -23,5 +29,10 @@ module.exports = {
   getAllRecipes,
   getRecipeById,
   updateRecipe,
-  deleteRecipe
+  deleteRecipe, 
+  createUser,
+  getAllUsers,
+  getUserById,
+  updateUser,
+  deleteUser
 }

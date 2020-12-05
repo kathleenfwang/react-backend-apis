@@ -14,5 +14,10 @@ router.get('/recipes', controllers.getAllRecipes)
 router.get('/recipes/:id', controllers.getRecipeById)
 router.put('/recipes/:id', controllers.updateRecipe)
 router.delete('/recipes/:id', controllers.deleteRecipe)
+router.post('/users', controllers.createUser)
+router.get('/users', controllers.getAllUsers)
+router.get('/users/:id', controllers.getUserById)
+router.put('/users/:id', controllers.updateUser)
+router.delete('/users/:id', controllers.deleteUser)
 
 module.exports = router 
