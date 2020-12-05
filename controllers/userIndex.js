@@ -1,4 +1,6 @@
 const User = require('../models/user')
+const Bcrypt = require('bcryptjs');
+
 const createUser = async (req, res) => {
     // async await only for returning PROMISES 
     const user = new User(req.body)
@@ -30,7 +32,22 @@ const createUser = async (req, res) => {
     })
   
   }
-  
+  const userLogin =  async (request, response) => {
+    try {
+        var user = await User.findOne({ username: request.body.username }).exec();
+        console.log(user)
+        if(!user) {
+            return response.status(400).send({ message: "The username does not exist" });
+        }
+        if(!Bcrypt.compareSync(request.body.password, user.password)) {
+            return response.status(400).send({ message: "The password is invalid" });
+        }
+        return response.send({ message: "The username and password combination is correct!" });
+    } catch (error) {
+      console.log(error)
+        response.status(500).send(error);
+    }
+};
   const deleteUser = async (req, res) => {
     const { id } = req.params 
     try {
@@ -48,5 +65,6 @@ const createUser = async (req, res) => {
     getAllUsers,
     getUserById,
     updateUser,
-    deleteUser
+    deleteUser,
+    userLogin
   }

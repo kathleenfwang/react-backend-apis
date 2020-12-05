@@ -17,7 +17,8 @@ const {
   getAllUsers,
   getUserById,
   updateUser,
-  deleteUser
+  deleteUser,
+  userLogin
 } = require('./userIndex')
 module.exports = {
   createPlant,
@@ -34,5 +35,6 @@ module.exports = {
   getAllUsers,
   getUserById,
   updateUser,
-  deleteUser
+  deleteUser,
+  userLogin
 }
