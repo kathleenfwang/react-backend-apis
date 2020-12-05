@@ -3,14 +3,9 @@ const Bcrypt = require('bcryptjs');
 
 const createUser = async (request, response) => {
     // async await only for returning PROMISES 
-    try {
-      request.body.password = Bcrypt.hashSync(request.body.password, 10);
-      var user = new User(request.body);
-      var result = await user.save();
-      response.send(result);
-  } catch (error) {
-      response.status(500).send(error);
-  }
+    const user = new User(req.body)
+    await user.save() 
+    return res.status(201).json(user)
   }
   
   // these have the req, res functions so dont need to put in app.get(). 
@@ -41,12 +36,12 @@ const createUser = async (request, response) => {
     try {
         var user = await User.findOne({ username: request.body.username }).exec();
         if(!user) {
-            return response.status(400).send({ message: "username invalid" });
+            return response.status(400).json({ message: "username and/or password invalid" });
         }
         if(!Bcrypt.compareSync(request.body.password, user.password)) {
-            return response.status(400).send({ message: "password invalid" });
+            return response.status(400).json({ message: "username and/or password invalid" });
         }
-        return response.send({ message: "Pass" });
+        return response.json({ message: "Pass" });
     } catch (error) {
         response.status(500).send(error);
     }
