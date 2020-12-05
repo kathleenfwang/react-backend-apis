@@ -1,7 +1,7 @@
 const User = require('../models/user')
 const Bcrypt = require('bcryptjs');
 
-const createUser = async (request, response) => {
+const createUser = async (res,req) => {
     // async await only for returning PROMISES 
     const user = new User(req.body)
     await user.save() 
