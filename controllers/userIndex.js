@@ -47,10 +47,10 @@ const createUser = async (request,response) => {
     try {
         var user = await User.findOne({ username: request.body.username }).exec();
         if(!user) {
-            return response.status(400).json({ message: "username and/or password invalid" });
+            return response.status(400).json({ message: "username and invalid" });
         }
         if(!Bcrypt.compareSync(request.body.password, user.password)) {
-            return response.status(400).json({ message: "username and/or password invalid" });
+            return response.status(400).json({ message: "password invalid" });
         }
         return response.json({ message: "Pass" });
     } catch (error) {
