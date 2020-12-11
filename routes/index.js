@@ -1,7 +1,8 @@
 const { Router } = require('express')
 const router = Router()
 const controllers = require('../controllers')
-
+var cors = require('cors')
+router.use(cors())
 router.get('/', (req, res) => res.send('root')) 
 
 router.post('/plants', controllers.createPlant)
