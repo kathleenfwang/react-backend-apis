@@ -1,6 +1,7 @@
 const Recipe = require('../models/recipe')
 const createRecipe = async (req, res) => {
     // async await only for returning PROMISES 
+    res.header("Access-Control-Allow-Origin", "*");
     const recipe = new Recipe(req.body)
     await recipe.save() 
     return res.status(201).json(recipe)
