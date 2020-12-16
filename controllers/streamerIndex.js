@@ -33,7 +33,16 @@ const createStreamer = async (req, res) => {
     })
   
   }
-  
+  const deleteStreamerByStreamerId = async (req,res) => {
+    const { id } = req.params 
+    try {
+      const streamer = await Streamer.findOneAndDelete({id:id})
+      res.status(200).json(streamer + ' deleted')
+    }
+    catch (e) {
+      return res.send(id + ' not found')
+    }
+  }
   const deleteStreamer = async (req, res) => {
     const { id } = req.params 
     try {
@@ -46,6 +55,7 @@ const createStreamer = async (req, res) => {
     
   }
   module.exports = {
+    deleteStreamerByStreamerId,
     getStreamerByStreamerId,
     createStreamer,
     getAllStreamers,

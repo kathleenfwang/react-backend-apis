@@ -1,6 +1,7 @@
 
 const bodyParser = require('body-parser')
 const {
+  deleteStreamerByStreamerId,
   getStreamerByStreamerId,
   createStreamer,
   getAllStreamers,
@@ -29,6 +30,7 @@ const {
   userLogin
 } = require('./userIndex')
 module.exports = {
+  deleteStreamerByStreamerId,
   getStreamerByStreamerId,
   createStreamer,
   getAllStreamers,
