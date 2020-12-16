@@ -11,7 +11,11 @@ const createStreamer = async (req, res) => {
     const streamers = await Streamer.find()
     return res.status(200).json(streamers)
   }
-  
+  const getStreamerByStreamerId = async (req,res) => {
+    const {id} = req.params 
+    const streamer = await Streamer.findOne({ id: id }) 
+    return res.status(200).json(streamer)
+  }
   const getStreamerById = async (req, res) => {
     const { id } = req.params
     const streamer = await Streamer.findById(id)
@@ -42,6 +46,7 @@ const createStreamer = async (req, res) => {
     
   }
   module.exports = {
+    getStreamerByStreamerId,
     createStreamer,
     getAllStreamers,
     getStreamerById,

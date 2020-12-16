@@ -24,6 +24,7 @@ router.post('/users/login', controllers.userLogin)
 router.post('/streamers', controllers.createStreamer)
 router.get('/streamers', controllers.getAllStreamers)
 router.get('/streamers/:id', controllers.getStreamerById)
+router.get('/streamers/id/:id', controllers.getStreamerByStreamerId)
 router.put('/streamers/:id', controllers.updateStreamer)
 router.delete('/streamers/:id', controllers.deleteStreamer)
 module.exports = router 
