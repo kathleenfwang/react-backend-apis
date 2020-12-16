@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 
 MONGODB_URI = process.env.PROD_MONGODB 
 
-mongoose.connect(MONGODB_URI, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect(`${MONGODB_URI}`, { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => {
   console.log('connected')
   })
