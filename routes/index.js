@@ -1,7 +1,8 @@
 const { Router } = require('express')
 const router = Router()
 const controllers = require('../controllers')
-
+var cors = require('cors')
+router.use(cors())
 router.get('/', (req, res) => res.send('root')) 
 
 router.post('/plants', controllers.createPlant)
@@ -20,4 +21,9 @@ router.get('/users/:id', controllers.getUserById)
 // router.put('/users/:id', controllers.updateUser)
 router.delete('/users/:id', controllers.deleteUser)
 router.post('/users/login', controllers.userLogin)
+router.post('/streamers', controllers.createStreamer)
+router.get('/streamers', controllers.getAllStreamers)
+router.get('/streamers/:id', controllers.getStreamerById)
+router.put('/streamers/:id', controllers.updateStreamer)
+router.delete('/streamers/:id', controllers.deleteStreamer)
 module.exports = router 

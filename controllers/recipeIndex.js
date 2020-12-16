@@ -1,13 +1,12 @@
 const Recipe = require('../models/recipe')
 const createRecipe = async (req, res) => {
     // async await only for returning PROMISES 
+    res.header("Access-Control-Allow-Origin", "*");
     const recipe = new Recipe(req.body)
     await recipe.save() 
     return res.status(201).json(recipe)
   }
-  
   // these have the req, res functions so dont need to put in app.get(). 
-  
   const getAllRecipes = async (req, res) => {
     const recipes = await Recipe.find()
     return res.status(200).json(recipes)

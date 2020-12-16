@@ -1,5 +1,12 @@
 
 const bodyParser = require('body-parser')
+const {
+  createStreamer,
+  getAllStreamers,
+  getStreamerById,
+  updateStreamer,
+  deleteStreamer,
+} = require('./streamerIndex')
 const { createRecipe,
   getAllRecipes,
   getRecipeById,
@@ -21,6 +28,11 @@ const {
   userLogin
 } = require('./userIndex')
 module.exports = {
+  createStreamer,
+  getAllStreamers,
+  getStreamerById,
+  updateStreamer,
+  deleteStreamer,
   createPlant,
   getAllPlants,
   getPlantById,
