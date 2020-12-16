@@ -1,6 +1,7 @@
 # Backend APIs for 15 React Projects 
 MERN backend code for 15 React Projects (Node.js, Express.js, MongoDB).   
 Moved the database originally hosted from mLab to MongoDB Atlas. 
+* [Streamers API](http://plant-app-1.herokuapp.com/streamers)
 * [Plants API](http://plant-app-1.herokuapp.com/plants) 
 * [Recipes API](http://plant-app-1.herokuapp.com/recipes)
 * [Users API](http://plant-app-1.herokuapp.com/users)
@@ -9,6 +10,7 @@ Moved the database originally hosted from mLab to MongoDB Atlas.
 - **User authentication** to login/signup using [Bcrypt](https://www.npmjs.com/package/bcryptjs) to hash passwords securely. Passwords cannot be reverse engineered to find original 
 - Models, routes, and controllers for three different Mongoose schemas (Plants, Recipes, Users) 
 - CRUD (create, read, update, destroy) functionality for all routes (`GET, POST, PUT, DELETE`) 
+- Streamers API uses `findOne()` and `findOneAndDelete()` to add/delete based on the given streamer ID, not the database ID, to maximize efficiency by passing in the given streamer ID without having to fetch the database ID 
 
 ## To use: 
 - connect to the database API URL (example: `http://plant-app-1.herokuapp.com/plants`) in [Postman](https://www.postman.com/)
