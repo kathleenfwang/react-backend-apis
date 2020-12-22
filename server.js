@@ -5,7 +5,7 @@ const bodyParser = require('body-parser')
 require('dotenv').config();
 var morgan = require('morgan')
 
-const PORT = process.env.PORT || 3000 
+const PORT = process.env.PORT || 8000 
 const app = express() 
 
 app.use(morgan('dev'))
@@ -13,8 +13,6 @@ app.use(bodyParser.json())
 app.use('/', routes)
 
 // don't put routes here, routes only in the app.use('/api', routes)
-
 // just app.use stuff 
  
-
 app.listen(PORT, () => console.log('listinig on port: ', PORT))
