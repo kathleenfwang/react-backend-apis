@@ -13,8 +13,6 @@ app.use(bodyParser.json())
 app.use('/', routes)
 
 // don't put routes here, routes only in the app.use('/api', routes)
-
 // just app.use stuff 
  
-
 app.listen(PORT, () => console.log('listinig on port: ', PORT))
