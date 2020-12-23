@@ -5,7 +5,8 @@ const SALT_WORK_FACTOR = 10;
 const User = new Schema(
   {
     username: { type: String, required: true, index: { unique: true } },
-    password: {type: String, required: true}
+    password: {type: String, required: true}, 
+    likedVillagers: [Number]
   }, 
  {timestamps:true}
 )
