@@ -22,6 +22,7 @@ const {
     deletePlant,
 } = require ('./plantIndex')
 const {
+  getUserByUserName,
   createUser,
   getAllUsers,
   getUserById,
@@ -30,6 +31,7 @@ const {
   userLogin
 } = require('./userIndex')
 module.exports = {
+  getUserByUserName,
   deleteStreamerByStreamerId,
   getStreamerByStreamerId,
   createStreamer,

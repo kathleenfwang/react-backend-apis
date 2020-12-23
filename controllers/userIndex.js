@@ -68,8 +68,14 @@ const createUser = async (request,response) => {
     }
     
   }
+  const getUserByUserName = async(request,response) => {
+    const {name} = request.params
+    const user = await User.findOne({ username: name }) 
+    return response.status(200).json(user)
+  }
 
   module.exports = {
+    getUserByUserName, 
     createUser,
     getAllUsers,
     getUserById,
