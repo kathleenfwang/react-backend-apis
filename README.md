@@ -6,12 +6,6 @@ Moved the database originally hosted from mLab to MongoDB Atlas.
 * [Users API](http://plant-app-1.herokuapp.com/users)
 * [Streamers API](http://plant-app-1.herokuapp.com/streamers)
 
-## Features: 
-- **User authentication** to login/signup using [Bcrypt](https://www.npmjs.com/package/bcryptjs) to hash passwords securely. Passwords cannot be reverse engineered to find original 
-- Models, routes, and controllers for three different Mongoose schemas (Plants, Recipes, Users) 
-- CRUD (create, read, update, destroy) functionality for all routes (`GET, POST, PUT, DELETE`) 
-- Streamers API uses `findOne()` and `findOneAndDelete()` to add/delete based on the given streamer ID, not the database ID, to maximize efficiency by passing in the given streamer ID without having to fetch the database ID 
-
 ## Example Request:
 
 `GET /plants/5e6150ee2e932200049a46a6`
@@ -34,6 +28,12 @@ Example Response:
   - `POST`: add to the database by supplying the entry parameters in the body 
   - `PUT /:id` : edit a specific entry by supplying the entry ID in the route and add the new entry parameters in the body  
   - `DELETE /:id` - delete a specific entry by supplying the ID in the route 
+  
+## Features: 
+- **User authentication** to login/signup using [Bcrypt](https://www.npmjs.com/package/bcryptjs) to hash passwords securely. Passwords cannot be reverse engineered to find original 
+- Models, routes, and controllers for three different Mongoose schemas (Plants, Recipes, Users) 
+- CRUD (create, read, update, destroy) functionality for all routes (`GET, POST, PUT, DELETE`) 
+- Streamers API uses `findOne()` and `findOneAndDelete()` to add/delete based on the given streamer ID, not the database ID, to maximize efficiency by passing in the given streamer ID without having to fetch the database ID 
 
 ## Uses: 
 - Node.js
